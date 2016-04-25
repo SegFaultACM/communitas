@@ -1,6 +1,6 @@
-Zonas = new Mongo.Collection('Zonas');
+Verdes = new Mongo.Collection('Verdes');
 
-Zonas.allow({
+Verdes.allow({
 	insert:function(userId, doc){
 		return true
 	}
@@ -13,11 +13,11 @@ Coordenada = new SimpleSchema({
 	}
 });
 
-ZonasSchema = new SimpleSchema({
+VerdesSchema = new SimpleSchema({
 	name:{
 		type: String,
 		label: "Nombre del Area Verde"
-		
+
 	},
 	desc:{
 		type: String,
@@ -39,7 +39,7 @@ ZonasSchema = new SimpleSchema({
 		}
 	},
 	creador:{
-		type: String, 
+		type: String,
 		label: "Creador",
 		autoValue: function(){
 			return this.userId
@@ -49,7 +49,7 @@ ZonasSchema = new SimpleSchema({
 		}
 	},
 	createdAt:{
-		type:Date, 
+		type:Date,
 		label:"Created At",
 		autoValue: function(){
 			return new Date()
@@ -61,4 +61,4 @@ ZonasSchema = new SimpleSchema({
 	}
 });
 
-Zonas.attachSchema(ZonasSchema);
+Verdes.attachSchema(VerdesSchema);
