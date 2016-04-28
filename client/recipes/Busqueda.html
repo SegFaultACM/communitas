@@ -1,5 +1,25 @@
 <template name="Busqueda">
-	
+	<section class="negocios">
+		<article class="recipe">
+			<script type="text/javascript">
+				$(function(){
+					$(".myButton").on("click", function(e){
+						window.location = "../busqueda/"+$("#res").val();
+					});
+				});
+
+			</script>
+			<input type="text" id="res" placeholder="Pon aqui tu busqueda" style="width:90%;margin-top: 20px;" />
+			<div class="myButton"><i class="fa fa-search"></i></div>
+		</article>
+		{{ #each negociosBusqueda }}			
+			<article class="recipe">
+				<h3>{{name}}</h3>	
+				<p>{{desc}}</p>
+				<p>{{rama}}</p>
+			</article>
+		{{ /each }}
+	</section>
 
 
 

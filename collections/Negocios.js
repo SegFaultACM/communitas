@@ -38,8 +38,33 @@ NegociosSchema = new SimpleSchema({
 		type: String,
 		label: "Rama del Negocio"
 	},
-	coord:{
-		type: [Coordenada,Coordenada]
+	nombreEncargado:{
+		type: String,
+		label: "Nombre del encargado"
+	},
+	codigoPostal:{
+		type: String,
+		label: "Codigo postal"
+	},
+	delegacion:{
+		type: String,
+		label: "Delegacion o municipio"
+	},
+	calle:{
+		type: String,
+		label: "Calle"
+	},
+	numeroCalle:{
+		type: String,
+		label: "Numero del local"
+	},
+	telefono:{
+		type: Number,
+		label: "Numero de telefono"
+	},
+	metrosCuadrados:{
+		type: Number,
+		label: "Mts. de area del local"
 	},
 	activo:{
 		type:Boolean,
@@ -48,6 +73,13 @@ NegociosSchema = new SimpleSchema({
 		autoform:{
 			type:"hidden"
 		}
+	},
+	coord:{
+		type: [Coordenada,Coordenada]
+	},
+	horario:{
+		type: [String],
+		label: "Horas de operacion"
 	},
 	creador:{
 		type: String, 

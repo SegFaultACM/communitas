@@ -1,7 +1,15 @@
 Meteor.subscribe('negocios');
 
+
+
 Template.Busqueda.helpers({
 	negociosBusqueda: ()=>{
-		return Negocios.find({name:"Papeleria"});
+		var data = FlowRouter.getParam("query")
+		return Negocios.find({name:{'$regex': data}});
+	},
+	getData: ()=>{
+		var data = FlowRouter.getParam("query");
+		console.log(data);
+		return data;
 	}
 });
